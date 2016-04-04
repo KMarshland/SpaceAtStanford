@@ -17,7 +17,7 @@
           <b>Name</b>
         </div>
         <div class="col-md-9">
-          <input class="form-control" placeholder="Ernest Jenkins">
+          <input class="form-control" placeholder="Ernest Jenkins" name="name">
         </div>
       </div>
 
@@ -26,7 +26,7 @@
           <b>Affiliated University</b>
         </div>
         <div class="col-md-9">
-          <input class="form-control" placeholder="University of Worcester">
+          <input class="form-control" placeholder="University of Worcester", name="affiliation">
         </div>
       </div>
 
@@ -39,3 +39,14 @@
       </div>
   <% end %>
 </div>
+
+<script>
+  $('.registrations').find('form').on('submit', function () {
+    var content = {
+      name: $(this).find('[name="name"]').val(),
+      affiliation: $(this).find('[name="affiliation"]').val()
+    };
+
+    $('#registration_content').val(JSON.stringify(content));
+  });
+</script>

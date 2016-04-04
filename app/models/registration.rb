@@ -10,5 +10,11 @@
 
 class Registration < ActiveRecord::Base
   serialize :content, JSON
+  validate :has_name
 
+  def has_name
+    if self.content[:name].blank?
+      errors.add(:registration, 'name required')
+    end
+  end
 end
