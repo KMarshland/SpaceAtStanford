@@ -9,4 +9,6 @@
 #
 
 class Registration < ActiveRecord::Base
+  serialize :content, JSON
+
 end
