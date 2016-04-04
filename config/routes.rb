@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :registrations, except: [:new]
+
   get 'home' => 'static#home'
   get 'about' => 'static#about', as: :about
-  get 'registration' => 'static#registration', as: :registration
+  get 'registration' => 'registrations#new', as: :new_registration
   get 'schedule' => 'static#schedule', as: :schedule
   get 'speakers' => 'static#speakers', as: :speakers
 

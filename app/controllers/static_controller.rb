@@ -5,9 +5,6 @@ class StaticController < ApplicationController
   def about
   end
 
-  def registration
-  end
-
   def schedule
   end
 
