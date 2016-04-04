@@ -1,14 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>SpaceAtStanford</title>
+<html lang="en-US"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <title>Space At Stanford – Colonization and the Next Frontier</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" id="sela-fonts-css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C300italic%2C400%2C400italic%2C600%7CDroid+Serif%3A400%2C400italic%7COswald%3A300%2C400&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+
+  <link rel="icon" href="<%= image_path 'favicon-32x32' %>" sizes="32x32">
+  <link rel="icon" href="<%= image_path 'favicon-192x192' %>" sizes="192x192">
 </head>
-<body>
 
-<%= yield %>
+<body class="home page page-id-2 page-template page-template-page-templates page-template-full-width-page page-template-page-templatesfull-width-page-php not-multi-author display-header-text comments-closed">
+<div id="page" class="hfeed site">
+  <header id="masthead" class="site-header" role="banner">
+    <div class="site-branding">
+      <h1 class="site-title"><a href="/" title="Space At Stanford" rel="home">Space At Stanford</a></h1>
+      <h2 class="site-description">Colonization and the Next Frontier</h2>
+    </div><!-- .site-branding -->
 
-</body>
-</html>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+      <button class="menu-toggle" aria-controls="menu" aria-expanded="false">Menu</button>
+      <div class="menu">
+        <ul class=" nav-menu">
+          <%= menu_item 'Home', '/' %>
+          <%= menu_item 'About', about_path, 'page-item-14' %>
+          <%= menu_item 'Registration', registration_path, 'page-item-16' %>
+          <%= menu_item 'Schedule', schedule_path, 'page-item-18' %>
+          <%= menu_item 'Speakers', speakers_path, 'page-item-20' %>
+        </ul>
+      </div>
+    </nav><!-- #site-navigation -->
+  </header><!-- #masthead -->
+
+  <div id="content" class="site-content">
+
+    <% if @featured_image %>
+        <div class="hero">
+          <div class="entry-thumbnail">
+            <%= image_tag @featured_image, class: 'attachment-sela-page-thumbnail size-sela-page-thumbnail' %>
+          </div>
+        </div><!-- .hero -->
+    <% end %>
+
+
+    <div class="content-wrapper full-width">
+      <div id="primary" class="content-area">
+        <div id="main" class="site-main" role="main">
+          <article id="post-2" class="post-2 page type-page status-publish has-post-thumbnail hentry with-featured-image">
+            <%= yield %>
+          </article><!-- #post-## -->
+        </div><!-- #content -->
+      </div><!-- #primary -->
+    </div><!-- .content-wrapper -->
+
+
+  </div><!-- #content -->
+
+
+  <footer id="colophon" class="site-footer">
+
+    <div class="site-info" role="contentinfo">
+      <a href="http://stanfordssi.org/">Created By The Stanford Student Space Initiative</a>
+    </div><!-- .site-info -->
+  </footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+
+</body></html>
