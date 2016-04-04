@@ -41,7 +41,17 @@
 </div>
 
 <script>
-  $('.registrations').find('form').on('submit', function () {
+  var formEl = $('.registrations').find('form');
+
+  //load content
+  (function () {
+    var content = JSON.parse($('#registration_content').val() || '{}');
+    formEl.find('[name="name"]').val(content.name);
+    formEl.find('[name="affiliation"]').val(content.affiliation);
+  })();
+
+  //save content on submission
+  formEl.on('submit', function (e) {
     var content = {
       name: $(this).find('[name="name"]').val(),
       affiliation: $(this).find('[name="affiliation"]').val()

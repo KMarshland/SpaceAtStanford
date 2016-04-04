@@ -30,7 +30,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        format.html { redirect_to :new_registration, notice: 'Registration successful' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }

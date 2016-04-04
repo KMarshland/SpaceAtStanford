@@ -13,8 +13,20 @@ class Registration < ActiveRecord::Base
   validate :has_name
 
   def has_name
-    if self.content[:name].blank?
+    if self.name.blank?
       errors.add(:registration, 'name required')
     end
+  end
+
+  def name
+    self.content['name']
+  end
+
+  def affiliation
+    self.content['affiliation']
+  end
+
+  def to_s
+    name
   end
 end
