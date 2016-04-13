@@ -7,7 +7,6 @@
         <th>Name</th>
         <th>Email</th>
         <th>Admin?</th>
-        <th>Student?</th>
     </tr>
     </thead>
 
@@ -18,9 +17,6 @@
             <td><%= link_to user.email, user %></td>
             <td>
                 <input name="admin" class="permission" type="checkbox" <%= user.check_roles(:admin) ? 'checked' : '' %> >
-            </td>
-            <td>
-                <input name="student" class="permission" type="checkbox" <%= user.check_roles(:student) ? 'checked' : '' %> >
             </td>
         </tr>
     <% end %>
@@ -39,7 +35,9 @@
             $.ajax({
                 url: '/users/' + self.closest('tr').data('user') + '/role',
                 type: 'PUT',
-                beforeSend: fixCSRF,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                },
                 data: {
                     name: name,
                     val: checked
