@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :google_oauth2, ENV['google_public'], ENV['google_secret']
+  provider :google_oauth2, ENV['GOOGLE_PUBLIC'], ENV['GOOGLE_SECRET']
 end

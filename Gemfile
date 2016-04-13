@@ -45,6 +45,9 @@ gem 'newrelic_rpm'
 
 gem 'omniauth-google-oauth2'
 
+#secret keys
+gem 'figaro'
+
 #for debugging
 gem 'colorize'
 gem 'annotate', '~> 2.6.6'
