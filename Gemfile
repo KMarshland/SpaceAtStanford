@@ -43,6 +43,8 @@ gem 'puma'
 
 gem 'newrelic_rpm'
 
+gem 'omniauth-google-oauth2'
+
 #for debugging
 gem 'colorize'
 gem 'annotate', '~> 2.6.6'
