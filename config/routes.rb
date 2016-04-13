@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :registrations, except: [:new]
 
+  get 'admin' => 'static#admin', as: :admin
   get 'home' => 'static#home'
   get 'about' => 'static#about', as: :about
   get 'registration' => 'registrations#new', as: :new_registration

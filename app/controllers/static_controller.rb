@@ -1,4 +1,6 @@
 class StaticController < ApplicationController
+  before_action :requires_admin, only: [:admin]
+
   def home
   end
 
@@ -9,5 +11,8 @@ class StaticController < ApplicationController
   end
 
   def speakers
+  end
+
+  def admin
   end
 end
