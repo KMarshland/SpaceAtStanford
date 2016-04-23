@@ -7,7 +7,7 @@ preload_app!
 rails_env = ENV['RAILS_ENV'] || 'development'
 port 3000 if rails_env == 'development'
 
-puts "Starting puma in #{rails_env} environment"
+puts "Starting puma server in #{rails_env} environment"
 
 rackup      DefaultRackup
 environment rails_env
