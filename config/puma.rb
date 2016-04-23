@@ -14,6 +14,8 @@ environment rails_env
 
 bind 'unix:///var/run/spaceatstanford.sock' if rails_env == 'production'
 
+stdout_redirect 'log/production.log', 'log/production.log' if rails_env == 'production'
+
 on_worker_boot do
   # Worker specific setup for Rails 4.1+
   # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
