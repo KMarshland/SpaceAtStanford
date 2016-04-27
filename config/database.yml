@@ -23,7 +23,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: spaceatstanford
+  database: habmc
   pool: 5
   username: ssi
-  password: <%= ENV['SSI_DATABASE_PASSWORD'] %>
+  host: localhost
+  password: <%= ENV['DATABASE_PASSWORD'] %>
